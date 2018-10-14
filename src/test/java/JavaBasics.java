@@ -2,24 +2,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class JavaBasics {
-    private Integer sumToCheck = 100;
+    private Double sumToPay = 372000.00;
 
     @Test
     public void firstTest() {
-        Integer a = 85;
-        Integer b = 15;
-        sumToCheck = 100;
+        Double loanAmount = 300000.00;
+        Double interestForFirst10Years = 0.10;
+        Double interestForSecond10Years = 0.08;
+        Double interestForLast10Years = 0.06;
 
-        Integer c = 45;
-        Integer d = 55;
 
-        sumAndCheck(a, b);
-        sumAndCheck(c, d);
-
+        sumAndCheck1(loanAmount, interestForFirst10Years, interestForSecond10Years, interestForLast10Years);
     }
 
-    private void sumAndCheck(Integer a, Integer b) {
-        Integer sum = a + b;
-        Assertions.assertEquals(sumToCheck, sum, "Numbers not equal");
+    private void sumAndCheck1(Double loanAmount, Double interestForFirst10Years, Double interestForSecond10Years,
+                              Double interestForLast10Years) {
+        Double sum = (loanAmount + (loanAmount * interestForFirst10Years) +
+                (loanAmount * interestForSecond10Years) + (loanAmount * interestForLast10Years));
+        Assertions.assertEquals(sumToPay, sum, "Amount is not correct");
     }
 }
