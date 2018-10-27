@@ -32,6 +32,8 @@ public class Task2 {
 
         browser.close();
 
+        // Assertion command in this row can't find webElements and mobElements to compare :(
+
 
     }
 }
